@@ -1,0 +1,14 @@
+.biography,
+.biography > .editor,
+.biography .tox {
+	display: flex;
+	flex-direction: column;
+	min-height: 300px;
+	width: 100%;
+}
+
+.attribute_center {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}

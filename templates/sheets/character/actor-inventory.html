@@ -1,0 +1,33 @@
+Inventar
+
+<!--
+<label style="width: 150px; color: rgb(0, 0, 0); text-align: center;">Spezifische Fertigkeiten</label>
+<div class="section-body">
+	<ol class="invents-list item-list">
+		{{#each invents as |invent inventId|}}
+			<div class="item invent flexrow" data-item-id="{{invent._id}}">
+				<table class="attribute_center" border="2">
+					<tbody>
+						<tr>
+							<th nowrap align="center" class="sheet-table-header-left" style="width: 150px;">&nbsp;Fähigkeit&nbsp;</th>
+							<th nowrap align="center" class="sheet-table-header-left" style="width: 60px;">&nbsp;Wert&nbsp;</th>
+							<th nowrap align="center" class="sheet-table-header-left" style="width: 50px;">&nbsp;Makro&nbsp;</th>
+							<th nowrap align="center" class="sheet-table-header-left" style="width: 50px;">&nbsp;Entfernen&nbsp;</th>
+						</tr>
+						<tr>
+							<td nowrap align="center" class="sheet-table-header-left" style="width: 131px;">
+								<span style="width: 50px;" title="{{invent.data.FeatDiscription.value}}">&nbsp;{{invent.name}}&nbsp;&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img>&nbsp;</span>
+							</td>
+
+                     <td nowrap align="center"><input type="number" name="invent.data.FeatTypus.value" style="width:35px; text-align:center;" title="Fertigkeits-Wert" value="{{invent.item.data.FeatTypus.value}}"></td>
+
+							<td nowrap align="center" class="rollable" data-roll-type="item">&nbsp;<button type="button" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button>&nbsp;</td>
+							<td nowrap align="center" ><span class="item-delete delete">&nbsp;<i class="fas fa-trash"></i>&nbsp;</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		{{/each}}
+	</ol>
+</div>
+-->

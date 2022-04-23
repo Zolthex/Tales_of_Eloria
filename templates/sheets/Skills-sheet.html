@@ -1,0 +1,58 @@
+<form class="{{cssClass}}" autocomplete="off">
+	<header class="sheet-header">
+		<img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
+		<h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}" /></h1>
+	</header>
+	<br>
+	<table>
+		<tbody>
+			<tr>
+				<th colspan="9" nowrap align="center"><span align="center" style="text-align: center;">Skillinformationen:</span></th>
+			</tr>
+			<tr>
+				<td nowrap align="center">Typus: </td>
+				<td nowrap align="center">Diff: </td>
+				<td nowrap align="center">Wert: </td>
+				<td nowrap align="center">Stufe: </td>
+			</tr>
+			<tr>
+				<td nowrap align="center"><input type="text" name="data.SkillTypus.value" value="{{data.SkillTypus.value}}" placeholder="{{ localize 'Name' }}" /></td>
+				<td nowrap align="center"><input type="number" name="data.SkillDifficult.value" value="{{data.SkillDifficult.value}}" placeholder="{{ localize 'Name' }}" /></td>
+				<td nowrap align="center"><input type="number" name="data.SkillValue.value" value="{{data.SkillValue.value}}" placeholder="{{ localize 'Name' }}" /></td>
+				<td nowrap align="center"><input type="number" name="data.SkillUsage.value" value="{{data.SkillUsage.value}}" placeholder="{{ localize 'Name' }}" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<table>
+		<tbody>
+			<tr>
+				<th colspan="9" nowrap align="center"><span align="center" style="text-align: center;">Gegenmaßnahmen:</span></th>
+			</tr>
+			<tr>
+				<td nowrap align="center">Ausweichbar: </td>
+				<td nowrap align="center">Widerstehbar: </td>
+				<td nowrap align="center">Parierbar: </td>
+				<td nowrap align="center">Konterbar: </td>
+				<td nowrap align="center">Unaufhaltbar: </td>
+			</tr>
+			<tr>
+				<td nowrap align="center"><input type="checkbox" name="data.Countermeasures.evade_value" value="{{checked data.Countermeasures.evade_value}}" /></td>
+				<td nowrap align="center"><input type="checkbox" name="data.Countermeasures.resist_value" value="{{checked data.Countermeasures.resist_value}}" /></td>
+				<td nowrap align="center"><input type="checkbox" name="data.Countermeasures.parry_value" value="{{checked data.Countermeasures.parry_value}}" /></td>
+				<td nowrap align="center"><input type="checkbox" name="data.Countermeasures.counter_value" value="{{checked data.Countermeasures.counter_value}}" /></td>
+				<td nowrap align="center"><input type="checkbox" name="data.Countermeasures.ultima_value" value="{{checked data.Countermeasures.ultima_value}}" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<table>
+		<tbody>
+			<tr>
+				<td nowrap align="center">Beschreibung: </td>
+			</tr>
+			<tr>
+				<td nowrap align="center"><textarea style="width: 450px; height: 100px;" name="data.ItemDiscription.value" title="ItemDiscription" placeholder="{{ localize 'Name' }}">{{data.ItemDiscription.value}}</textarea></td>				
+			</tr>
+		</tbody>
+	</table>
+</form>
