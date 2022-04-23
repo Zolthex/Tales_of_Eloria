@@ -38,7 +38,7 @@
                     <div class="item" align="center"><br>
                         <input class="input species" style="box-shadow: none !important;" type="text" name="data.Species.value" value="{{actor.data.Species.value}}" /><br>
                         <span class="label species">&nbsp;Spezies</span><br><br>
-                        <input class="input species" style="box-shadow: none !important;" type="text" name="data.PathConcept.value" value="{{actor.data.PathConcept.value}}" /><br>
+                        <input class="input species" style="box-shadow: none !important;" type="text" name="data.PathConcept.value" value="{{actor.data.PathConcept.value}}" placeholder="z.B. Jägern"/><br>
                         <span class="label species">&nbsp;Pfad/Konzept</span><br>&nbsp;
                     </div>
                 </td>
@@ -59,15 +59,15 @@
 
     {{!-- Character Sheet Navigation --}}
     <nav class="sheet-navigation tabs" data-group="primary">
-        <a class="item active" data-tab="biography">Biographie</a>
-		<a class="item" data-tab="stats">Status</a>
-        <a class="item" data-tab="attributes">Attribute</a>
+		<a class="item" data-tab="stats">Charakter</a>
+        <a class="item" data-tab="attributes">Hauptwerte</a>
         <a class="item" data-tab="features">Fertigkeiten</a>
         <a class="item" data-tab="spellbook">Buch der Gaben</a>
         <a class="item" data-tab="companions">Vertraute</a>
-        <a class="item" data-tab="weapon">Waffen</a>
+        <a class="item" data-tab="weapon">Kampf</a>
         <a class="item" data-tab="inventory">Inventar</a>
         <a class="item" data-tab="notes">Notizen</a>
+        <a class="item active" data-tab="biography">Geschichte</a>
     </nav>
     
     <hr>
@@ -123,7 +123,7 @@
 
         {{!-- Biography Tab --}}
         <div class="tab biography flexrow" data-group="primary" data-tab="biography">
-            <div class="biography">
+            <div class="biography textcolor">
                 {{editor content=data.biography.value target="data.biography.value" button=true owner=owner editable=editable}}
             </div>
         </div>

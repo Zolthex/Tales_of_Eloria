@@ -1,4 +1,52 @@
 <label style="width: 150px; color: rgb(0, 0, 0); text-align: center;">Fähigkeits Bereich</label>
+
+<div>
+	<table class="attribute_center" border="2">
+		<tbody>  
+			<tr>
+				<th nowrap colspan="2" style="width: 200px;"><label class="sheet-table-header" style="width: 150px; text-align:center; color: rgb(0, 0, 0);">Kosmische Kräfte</label></th>
+				<th nowrap style="width: 60px;"><label class="sheet-table-header" style="width: 150px; text-align:center; color: rgb(0, 0, 0);">Wert</label></th>
+				<th nowrap colspan="2" style="width: 200px;"><label class="sheet-table-header" style="width: 150px; text-align:center; color: rgb(0, 0, 0);">Kosmische Kräfte</label></th>
+				<th nowrap style="width: 60px;"><label class="sheet-table-header" style="width: 150px; text-align:center; color: rgb(0, 0, 0);">Wert</label></th>
+				<th nowrap colspan="2" style="width: 200px;"><label class="sheet-table-header" style="width: 150px; text-align:center; color: rgb(0, 0, 0);">Kosmische Kräfte</label></th>
+				<th nowrap style="width: 60px;"><label class="sheet-table-header" style="width: 150px; text-align:center; color: rgb(0, 0, 0);">Wert</label></th>
+			</tr>
+			<tr style="width: 120px;">
+				<td colspan="12" style="height: 15px; font-size: 13px; text-align:center; color: rgb(255, 50, 0);" border="1">Kanalisierungen</td>
+			</tr> 
+			<tr style="width: 150px;">
+				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Magie-Kanalisierung:</label></td>
+					<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Magie-Kanalisierung">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
+				<td nowrap align="center"><input type="number" name="data.Channeling.Magic" style="width:35px; text-align:center;" title="Körperkraft-Wert" value="{{actor.data.Channeling.Magic}}"></td>
+				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Segens-Kanalisierung:</label></td>
+					<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Segens-Kanalisierung">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
+				<td nowrap align="center"><input type="number" name="data.Channeling.Faith" style="width:35px; text-align:center;" title="Geschicklichkeit-Wert" value="{{actor.data.Channeling.Faith}}"></td>
+				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Askese-Kanalisierung:</label></td>
+					<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Askese-Kanalisierung">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
+				<td nowrap align="center"><input type="number" name="data.Channeling.Spirit" style="width:35px; text-align:center;" title="Reflexe & Sinne-Wert" value="{{actor.data.Channeling.Spirit}}"></td>
+				</tr>
+			<tr style="width: 120px;">
+				<td colspan="12" style="height: 15px; font-size: 13px; text-align:center; color: rgb(255, 50, 0);" border="1">Kosmische Energie</td>
+			</tr>
+			<tr style="width: 150px;">
+				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Kosmische Macht:</label></td>
+				<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Kosmische Macht">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
+				<td nowrap align="center"><input type="number" name="data.ChannelResources.ManaCom" style="width:35px; text-align:center;" title="Körperkraft-Wert" value="{{actor.data.ChannelResources.ManaCom}}" disabled="true"></td>
+				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Aktuelle Macht:</label></td>
+				<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Aktuelle Macht">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
+				<td nowrap align="center"><input type="number" name="data.ChannelResources.Mana" style="width:35px; text-align:center;" title="Geschicklichkeit-Wert" value="{{actor.data.ChannelResources.Mana}}" disabled="true"></td>
+				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Kosmische Regeneration:</label></td>
+				<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Kosmische Regeneration">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
+				<td nowrap align="center"><input type="number" name="data.ChannelResources.ManaReg" style="width:35px; text-align:center;" title="Reflexe & Sinne-Wert" value="{{actor.data.ChannelResources.ManaReg}}" disabled="true"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!--
+<input type="hidden" name="attr_Cosmo_reg" value="[[((([[1d6]]+@{Cosmo_rega})*2)+(@{spleep}))]]">
+-->
+
 <div class="section-body">
 	<ol class="skills-list item-list">
 		{{#each skills as |skill skillId|}}
@@ -16,64 +64,71 @@
 						</tr>
 						<tr>
 							<td nowrap align="center" class="sheet-table-header-left" style="width: 131px;">
-								<span style="width: 50px;" title="Die Belastsamkeit des Körpers">&nbsp;<a class="item-edit">{{skill.name}}</a>&nbsp;&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img>&nbsp;</span>
+								<span style="width: 50px;" title="{{data.ItemDiscription.value}}">&nbsp;<a class="item-edit">{{skill.name}}</a>&nbsp;&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img>&nbsp;</span>
 							</td>
 							<td nowrap align="center">
-								&nbsp;
-								<select
+								&nbsp;<input
+									type="text"
 									class=""
-									style="height: 24px; width: 80px; font-size: 0.75em"
-									name="data.SkillTypus.value"
-									title="Ability used for feet"
-								>
-									<option type="text" style="width: 45px" value="{{item.data.SkillTypus.value}}" selected>Magie</option>
-									<option type="text" style="width: 45px" value="{{item.data.SkillTypus.value}}">Glaube</option>
-									<option type="text" style="width: 45px" value="{{item.data.SkillTypus.value}}">Chakra</option>
-								</select>&nbsp;
+									style="width: 60px"
+									value="{{skill.data.SkillTypus.value}}"
+									disabled="true"
+								/>&nbsp;
 							</td>
 							<td nowrap align="center">
 								&nbsp;<input
 									type="number"
 									class=""
 									style="width: 45px"
-									value="{{item.data.SkillDifficult.value}}"
+									value="{{skill.data.SkillDifficult.value}}"
 									disabled="true"
 								/>&nbsp;
 							</td>
+							
 							<td nowrap align="center" class="">
 								&nbsp;
 								<select
-									class="changeable-value"
+									class="skill-value inline-edit"
+									name="data.SkillValue.value"
+									id="data.SkillValue.value"
 									data-property="data.SkillValue.value"
+									data-field="data.SkillValue.value"
 									style="height: 24px; width: 50px; font-size: 0.75em"
 									title="Ability used for feet"
+									placeholder="0"
 								>
-									<option type="number" style="width: 45px" value="{{item.data.SkillValue.value}}">0</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillValue.value}}">1</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillValue.value}}">2</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillValue.value}}">3</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillValue.value}}">4</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillValue.value}}">5</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillValue.value}}">6</option>
+									<option id="data.SkillValue.value" value="{{skill.dataSkillValue.value}}" hidden="hidden" selected="selected">{{skill.data.SkillValue.value}}</option>
+									<option type="number" style="width: 45px" value="0">0</option>
+									<option type="number" style="width: 45px" value="1">1</option>
+									<option type="number" style="width: 45px" value="2">2</option>
+									<option type="number" style="width: 45px" value="3">3</option>
+									<option type="number" style="width: 45px" value="4">4</option>
+									<option type="number" style="width: 45px" value="5">5</option>
+									<option type="number" style="width: 45px" value="6">6</option>
 								</select>&nbsp;
 							</td>
+
 							<td nowrap align="center" class="">
 								&nbsp;
 								<select
-								<select
-									class="changeable-value"
+									class="skill-value inline-edit"
+									name="data.SkillUsage.value"
+									id="data.SkillUsage.value"
 									data-property="data.SkillUsage.value"
+									data-field="data.SkillUsage.value"
 									style="height: 24px; width: 50px; font-size: 0.75em"
 									title="Ability used for feet"
 								>
-									<option type="number" style="width: 45px" value="{{item.data.SkillUsage.value}}">1</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillUsage.value}}">2</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillUsage.value}}">3</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillUsage.value}}">4</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillUsage.value}}">5</option>
-									<option type="number" style="width: 45px" value="{{item.data.SkillUsage.value}}">6</option>
+									<option id="data.SkillUsage.value" value="{{skill.data.SkillUsage.value}}" hidden="hidden" selected="selected">{{skill.data.SkillUsage.value}}</option>
+									<option type="number" style="width: 45px" value="1">1</option>
+									<option type="number" style="width: 45px" value="2">2</option>
+									<option type="number" style="width: 45px" value="3">3</option>
+									<option type="number" style="width: 45px" value="4">4</option>
+									<option type="number" style="width: 45px" value="5">5</option>
+									<option type="number" style="width: 45px" value="6">6</option>
 								</select>&nbsp;
 							</td>
+							
 							<td nowrap align="center" class="rollable" data-roll-type="item">&nbsp;<button type="button" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button>&nbsp;</td>
 							<td nowrap align="center" ><span class="item-delete delete">&nbsp;<i class="fas fa-trash"></i>&nbsp;</span></td>
 						</tr>
@@ -82,15 +137,15 @@
 						<tr>
                             <td nowrap align="center">&nbsp;<b>Gegenmaßnahmen:</b>&nbsp;&nbsp;</td>
                             <td nowrap align="center">&nbsp;&nbsp;&nbsp;&nbsp; Ausweichbar: &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td nowrap align="center"><input type="checkbox" class="skill-evade_value inline-edit" data-field="data.Countermeasures.evade_value" name="data.Countermeasures.evade_value" value="{{checked item.data.Countermeasures.evade_value}}" readonly disabled title="Ausweichbar" /></td>
+                            <td nowrap align="center"><input type="checkbox" class="skill-evade_value inline-edit" data-field="skill.data.Countermeasures.evade_value" name="data.Countermeasures.evade_value" {{checked skill.data.Countermeasures.evade_value}} readonly disabled title="Ausweichbar" /></td>
                             <td nowrap align="center">&nbsp;&nbsp;&nbsp;&nbsp; Widerstehbar: &nbsp;&nbsp;&nbsp;</td>
-                            <td nowrap align="center"><input type="checkbox" class="skill-resist_value inline-edit" data-field="data.Countermeasures.resist_value" name="data.Countermeasures.resist_value" value="{{checked item.data.Countermeasures.resist_value}}" readonly disabled title="Widerstehbar" /></td>
+                            <td nowrap align="center"><input type="checkbox" class="skill-resist_value inline-edit" data-field="skill.data.Countermeasures.resist_value" name="data.Countermeasures.resist_value" {{checked skill.data.Countermeasures.resist_value}} readonly disabled title="Widerstehbar" /></td>
                             <td nowrap align="center">&nbsp;&nbsp;&nbsp;&nbsp; Parierbar: &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td nowrap align="center"><input type="checkbox" class="skill-parry_value inline-edit" data-field="data.Countermeasures.parry_value" name="data.Countermeasures.parry_value" value="{{checked item.data.Countermeasures.parry_value}}" readonly disabled title="Parierbar" /></td>
+                            <td nowrap align="center"><input type="checkbox" class="skill-parry_value inline-edit" data-field="skill.data.Countermeasures.parry_value" name="data.Countermeasures.parry_value" {{checked skill.data.Countermeasures.parry_value}} readonly disabled title="Parierbar" /></td>
                             <td nowrap align="center">&nbsp;&nbsp;&nbsp;&nbsp; Konterbar: &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td nowrap align="center"><input type="checkbox" class="skill-counter_value inline-edit" data-field="data.Countermeasures.counter_value" name="data.Countermeasures.counter_value" value="{{checked item.data.Countermeasures.counter_value}}" readonly disabled title="Konterbar" /></td>
+                            <td nowrap align="center"><input type="checkbox" class="skill-counter_value inline-edit" data-field="skill.data.Countermeasures.counter_value" name="data.Countermeasures.counter_value" {{checked skill.data.Countermeasures.counter_value}} readonly disabled title="Konterbar" /></td>
                             <td nowrap align="center">&nbsp;&nbsp;&nbsp;&nbsp; Unaufhaltbar: &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td nowrap align="center"><input type="checkbox" class="skill-ultima_value inline-edit" data-field="data.Countermeasures.ultima_value" name="data.Countermeasures.ultima_value" value="{{checked item.data.Countermeasures.ultima_value}}" readonly disabled title="Unaufhaltbar" /></td>
+                            <td nowrap align="center"><input type="checkbox" class="skill-ultima_value inline-edit" data-field="skill.data.Countermeasures.ultima_value" name="data.Countermeasures.ultima_value" {{checked skill.data.Countermeasures.ultima_value}} readonly disabled title="Unaufhaltbar" /></td>
                         </tr>
 					</tbody>
 				</table>

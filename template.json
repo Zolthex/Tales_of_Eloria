@@ -25,7 +25,7 @@
 					"value": 1
 				},
 				"Spirit": {
-					"name": "Spiritualität",
+					"name": "Askese",
 					"value": 1
 				},
 
@@ -55,15 +55,15 @@
 					"value": 1
 				},
 				"Evade": {
-					"name": "Kosmos-Einklang",
+					"name": "Ausweichen",
 					"value": 1
 				},
 				"Thwart": {
-					"name": "Kosmos-Einklang",
+					"name": "Abwehren",
 					"value": 1
 				},
 				"Sustain": {
-					"name": "Kosmos-Einklang",
+					"name": "Aushalten",
 					"value": 1
 				},
 				"Initiative": {
@@ -88,6 +88,10 @@
 					"name": "Askeserunden",
 					"value": 0
 				},
+				"WillMainPower": {
+					"name": "Willenskraft",
+					"value": 0
+				},
 
 				"Stamina": {
 					"name": "Ausdauer",
@@ -103,6 +107,10 @@
 				},
 				"Damage": {
 					"name": "Schadenspunkte",
+					"value": 0
+				},
+				"TempDamage": {
+					"name": "Temporäre Schadenspunkte",
 					"value": 0
 				},
 				"Penalty": {
@@ -260,7 +268,7 @@
 					"name": "Astralsicht",
 					"value": 0
 				},
-				"Perception": {
+				"Perceptioning": {
 					"name": "Wahrnehmung",
 					"value": 0
 				},
@@ -408,7 +416,7 @@
 			"charinfos_4": {
 				"PathConcept": {
 					"name": "Pfad/Konzept",
-					"value": "Jäger"
+					"value": ""
 				},
 				"PathPoints": {
 					"name": "Pfadpunkte",
@@ -474,11 +482,11 @@
 		}
 	},
 	"Item": {
-		"types": ["Waffen", "Fertigkeiten", "Skills", "Items", "Companions"],
+		"types": ["Waffen", "Armor", "Fertigkeiten", "Skills", "Items", "Companions"],
 		"templates": {
 			"mainstats": {
 				"Typus": {
-					"name": "Waffenart",
+					"name": "Gegenstandsart",
 					"value": ""
 				},
 				"EnchantValue": {
@@ -487,6 +495,10 @@
 				},
 				"WeaponDamage": {
 					"name": "Schaden",
+					"value": 0
+				},
+				"ArmorProtection": {
+					"name": "Schutz",
 					"value": 0
 				},
 				"Category": {
@@ -552,6 +564,14 @@
 				"ItemDiscription": {
 					"name": "Beschreibung",
 					"value": "Unbekannt"
+				},			
+				"ItemType": {
+					"name": "Type",
+					"value": ""
+				},
+				"ItemCount": {
+					"name": "Menge",
+					"value": "0"
 				}			
 			},
 			"compainioninfo": {
@@ -562,13 +582,28 @@
 				"Sealgrade": {
 					"name": "Beschreibung",
 					"value": "0"
-				}						
+				},
+				"DmgProt": {
+					"name": "Schaden/Schutz",
+					"value": "0"
+				},
+				"Skill": {
+					"name": "Fähigkeit",
+					"value": ""
+				},
+				"Discription": {
+					"name": "Wirkung",
+					"value": ""
+				}
 			},
 			"formula": {
 				"formula": "1d12"
 			}
 		},
 		"Waffen": {
+			"templates": ["mainstats", "firearms", "iteminfo", "formula"]
+		},
+		"Armor": {
 			"templates": ["mainstats", "firearms", "iteminfo", "formula"]
 		},
 		"Fertigkeiten": {

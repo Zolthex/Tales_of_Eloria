@@ -12,3 +12,7 @@
 	flex-direction: column;
 	height: 100%;
 }
+
+.textcolor {
+	color: rgb(126, 38, 38);
+}
