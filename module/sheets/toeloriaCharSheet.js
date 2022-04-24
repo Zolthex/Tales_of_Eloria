@@ -45,6 +45,11 @@ export default class toeloriaCharSheet extends ActorSheet {
 		const companions = actorData.items.filter((s) => s.type === "Companions")
 		const stacks = actorData.items.filter((s) => s.type === "Items")
 		const stats = actorData.items.filter((s) => s.type === "Stats")
+		
+		console.log("armors: ", armors);
+		let calculatedArmor = armors.reduce((previousValue, currentValue) => previousValue + currentValue.data.ArmorProtection.value, 0);
+		this.armorMax(calculatedArmor);
+		this.armortest();
 
 		return {
 			...baseData,
@@ -58,9 +63,21 @@ export default class toeloriaCharSheet extends ActorSheet {
 			companions,
 			stacks,
 			stats,
+			calculatedArmor,
 		};
 	}
 
+	armortest(){
+		let actor = this.actor;
+		console.log("Armor max.: ", actor.data.data.Armor.value);
+	}
+
+	armorMax(maxarmor){
+		let actor = this.actor;
+		console.log("Armor max.: ",maxarmor);
+		return actor.update({'data.Armor.value': maxarmor});
+	}
+	
 	async _onRoll(event) {
 		event.preventDefault();
 		const element = event.currentTarget;
@@ -209,6 +226,7 @@ export default class toeloriaCharSheet extends ActorSheet {
 		let actor = this.actor;
 
 		console.log("Übergabewert = ", { [field]: element.value }, ", Attr = ", att);
+		console.log("element.value: ", element.value);
 		
 		switch (att) {
 			case "Strength":
@@ -231,7 +249,7 @@ export default class toeloriaCharSheet extends ActorSheet {
 				let val_06 = Number(element.value);
 				let val_07 = (Number(element.value)*2) + Number(this.actor.data.data.Perception.value) + Number(this.actor.data.data.Dodge.value) + Number(this.actor.data.data.Dexterity.value) - Number(this.actor.data.data.Penalty.value) - Number(6);
 				let val_08 = (Number(element.value)*2) + Number(this.actor.data.data.Perception.value) + Number(this.actor.data.data.Parry.value) + Number(this.actor.data.data.Dexterity.value) - Number(this.actor.data.data.Penalty.value) - Number(6);
-				let val_09 = Number(element.value) + Number(this.actor.data.data.Resist.value) + Number(this.actor.data.data.Amor.value) - Number(3);
+				let val_09 = Number(element.value) + Number(this.actor.data.data.Resist.value) + Number(this.actor.data.data.Armor.value) - Number(3);
 				return actor.update({'data.Stamina.value': val_01, 'data.LP.value': val_02, 'data.Penalty.value': val_03, 'data.DeathThreshold.value': val_04, 'data.ComaRounds.value': val_05, 'data.HealBase.value': val_06, 'data.Dodge.value': val_07, 'data.Parry.value': val_08, 'data.Resist.value': val_09});
 			case "Dexterity":
 			/*
@@ -348,7 +366,7 @@ export default class toeloriaCharSheet extends ActorSheet {
 			/*
 				* Resistieren: Körperkraft + Resistieren-Wert + Rüstungs-Wert - 3
 			*/				
-				let val_35 = Number(element.value) + Number(this.actor.data.data.Strength.value) + Number(this.actor.data.data.Amor.value) - Number(3);
+				let val_35 = Number(element.value) + Number(this.actor.data.data.Strength.value) + Number(this.actor.data.data.Armor.value) - Number(3);
 				return actor.update({'data.Resist.value': val_35});
 			case "Melee":
 					let val_36 = Number(element.value);

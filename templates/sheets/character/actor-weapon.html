@@ -1,22 +1,27 @@
 <!--
-<td nowrap align="center">Name: </td>
-				<td nowrap align="center">Typus: </td>
-				<td nowrap align="center">Verzauberung: </td>
-			</tr>
+	<table class="attribute_center" border="2">
+		<tbody>
 			<tr>
-				<td nowrap align="center"><input name="Name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}" /></td>
-				<td nowrap align="center"><input name="Typus" type="text" value="{{actor.data.Type.value}}" placeholder="{{ localize 'Name' }}" /></td>
-				<td nowrap align="center"><input name="EnchantValue" type="number" value="{{actor.data.EnchantValue.value}}" placeholder="{{ localize 'Name' }}" /></td>
+				<th nowrap style="width: 50px;">
+					<label class="sheet-table-header" style="width: 150px; text-align:center; color: rgb(0, 0, 0);">Initiativephase</label>
+				</th>
+
+				<th nowrap style="width: 50px;">
+					<label class="sheet-table-header" style="width: 150px; text-align:center; color: rgb(0, 0, 0);">Erholungsphase</label>
+				</th>
 			</tr>
-			<tr>
-				<td nowrap align="center">Schaden: </td>
-				<td nowrap align="center">Bonus: </td>
-				<td nowrap align="center">Kategorie: </td>
+
+			<tr style="width: 120px;">
+				<td nowrap align="center" class="rollable" data-roll-type="attribute">
+					<button type="button" data-toe-roll="1d6" data-toe-ini="data.Ini_Bonus.value" title="Klicken zum Würfeln" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button>
+				</td>
+
+				<td nowrap align="center">
+					<button type="button" data-toe-abroll="1d6" data-toe-heal="data.HealBase.value" data-toe-heal="data.ChannelResources.ManaReg" title="Klicken zum Würfeln" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button>
+				</td>
 			</tr>
-			<tr>
-				<td nowrap align="center"><input name="Damage" type="number" value="{{actor.data.Damage.value}}" placeholder="{{ localize 'Name' }}" /></td>
-				<td nowrap align="center"><input name="Bonus" type="number" value="{{actor.data.CategoryValue.value}}" placeholder="{{ localize 'Name' }}" /></td>
-				<td nowrap align="center"><input name="Category" type="text" value="{{actor.data.Category.value}}" placeholder="{{ localize 'Name' }}" /></td>
+		</tbody>
+	</table>
 -->
 
 <label style="width: 150px; color: rgb(0, 0, 0); text-align: center;">Offensiv</label>
@@ -44,8 +49,6 @@
 					<td nowrap align="center"><input type="number" class="" style="width:35px; text-align:center;" title="{{weapon.name}}-Wert" value="{{weapon.data.WeaponDamage.value}}" placeholder="0" disabled="true"/></td>
 					<td nowrap align="center"><input type="number" class="" style="width:35px; text-align:center;" title="{{weapon.name}}-Wert" value="{{weapon.data.CategoryValue.value}}" placeholder="0" disabled="true"/></td>
 					<td nowrap align="center"><input type="text" class="" style="width:100px; text-align:center;" title="{{weapon.name}}-Wert" value="{{weapon.data.Category.value}}" placeholder="0" disabled="true"/></td>
-                     <!-- <td nowrap align="center"><button type="button" data-toe-roll="1d12" data-toe-ability="Strength" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button></td> -->
-					 <!-- {{actor.data.ItemDiscription.value}} -->
 					<td nowrap align="center" class="rollable" data-roll-type="item">&nbsp;<button type="button" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button>&nbsp;</td>
 					<td nowrap align="center" ><span class="item-delete delete">&nbsp;<i class="fas fa-trash"></i>&nbsp;</span></td>
                   </tr>
@@ -84,8 +87,6 @@
 					<td nowrap align="center"><input type="number" class="" style="width:35px; text-align:center;" title="{{armor.name}}-Wert" value="{{armor.data.ArmorProtection.value}}" placeholder="0" disabled="true"/></td>
 					<td nowrap align="center"><input type="number" class="" style="width:35px; text-align:center;" title="{{armor.name}}-Wert" value="{{armor.data.CategoryValue.value}}" placeholder="0" disabled="true"/></td>
 					<td nowrap align="center"><input type="text" class="" style="width:100px; text-align:center;" title="{{armor.name}}-Wert" value="{{armor.data.Category.value}}" placeholder="0" disabled="true"/></td>
-                     <!-- <td nowrap align="center"><button type="button" data-toe-roll="1d12" data-toe-ability="Strength" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button></td> -->
-					 <!-- {{actor.data.ItemDiscription.value}} -->
 					<td nowrap align="center" class="rollable" data-roll-type="item">&nbsp;<button type="button" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button>&nbsp;</td>
 					<td nowrap align="center" ><span class="item-delete delete">&nbsp;<i class="fas fa-trash"></i>&nbsp;</span></td>
                   </tr>

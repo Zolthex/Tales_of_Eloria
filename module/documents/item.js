@@ -29,7 +29,7 @@ export default class toeloriaItem extends Item {
 		console.log("Hit: ", hit);
 		return actor.update({'data.TempDamage.value': hit});
 	}
-	
+
 	async roll() {
 		const item = this.data;
 		const speaker = ChatMessage.getSpeaker({ actor: this.actor });
@@ -37,6 +37,8 @@ export default class toeloriaItem extends Item {
 		let label = `[${item.type}] ${item.name}`;
 
 		let content = item.data.description ?? "";
+
+		let actor = this.actor;
 
 		console.log("Label: ", item.type);
 
@@ -65,11 +67,11 @@ export default class toeloriaItem extends Item {
 				const catval = item.data.CategoryValue?.value ?? 0;
 				label = `Angriff an mit ` + item.name + `(+${ench}) [${typ}] <br>Schaden: ${dmg} / ${cat}: ${catval}`;
 				console.log("Waffen-Label: ", label);
-				await this.fightCalculation(calc_date);				
+				//await this.fightCalculation(calc_date); muss noch auf das Ziel umgelenkt werden.		
 			}
 			else if (item.type === "Armor") {
 				console.log("Rüstung");
-				const dmg = item.data.ArmorProtection?.value ?? 0;
+				const dmg = actor.data.data.Armor?.value ?? 0;				
 				const typ = item.data.Type?.value ?? 0;
 				const ench = item.data.EnchantValue?.value ?? 0;
 				const cat = item.data.Category?.value ?? 0;
@@ -88,7 +90,6 @@ export default class toeloriaItem extends Item {
 				rollMode: rollMode,
 				flavor: label,
 			});
-			let actor = this.actor;
 			console.log("Temp DMG 2: ", actor.data.data.TempDamage.value);
 			return roll;
 		}
