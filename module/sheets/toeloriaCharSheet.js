@@ -180,11 +180,23 @@ export default class toeloriaCharSheet extends ActorSheet {
 	async _onSkillEdit(event) {
 		event.preventDefault();
 		let element = event.currentTarget;
-		let itemId = element.closest(".item").dataset.itemId;
-		let item = this.actor.getOwnedItem(itemId);
+		//let itemId = element.closest(".item").dataset.itemId;
+		//let item = this.actor.getOwnedItem(itemId);
 		let field = element.dataset.field;
 
-		return item.update({ [field]: element.value });
+		if (field === "Created") {	
+			let actor = this.actor;
+			let val_created = true;
+			let mana =  Number(this.actor.data.data.ChannelResources.ManaCom);
+			return actor.update({'data.ChannelResources.Mana': mana, 'data.Created.value': val_created});
+		}
+		else {			
+			console.log("Field: ", field);
+			console.log("element.value: ", element.value);
+			let itemId = element.closest(".item").dataset.itemId;
+			let item = this.actor.getOwnedItem(itemId);
+			return item.update({ [field]: element.value });
+		}
 	}
 
 

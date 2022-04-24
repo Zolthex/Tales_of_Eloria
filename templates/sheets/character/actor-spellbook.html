@@ -17,13 +17,13 @@
 			<tr style="width: 150px;">
 				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Magie-Kanalisierung:</label></td>
 					<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Magie-Kanalisierung">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
-				<td nowrap align="center"><input type="number" name="data.Channeling.Magic" style="width:35px; text-align:center;" title="Körperkraft-Wert" value="{{actor.data.Channeling.Magic}}"></td>
+				<td nowrap align="center"><input type="number" name="data.Channeling.Magic" style="width:35px; text-align:center;" title="Kanalisierung der magischen Kräfte" value="{{actor.data.Channeling.Magic}}"></td>
 				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Segens-Kanalisierung:</label></td>
 					<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Segens-Kanalisierung">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
-				<td nowrap align="center"><input type="number" name="data.Channeling.Faith" style="width:35px; text-align:center;" title="Geschicklichkeit-Wert" value="{{actor.data.Channeling.Faith}}"></td>
+				<td nowrap align="center"><input type="number" name="data.Channeling.Faith" style="width:35px; text-align:center;" title="Kanalisierung der gesegneten Kräfte" value="{{actor.data.Channeling.Faith}}"></td>
 				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Askese-Kanalisierung:</label></td>
 					<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Askese-Kanalisierung">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
-				<td nowrap align="center"><input type="number" name="data.Channeling.Spirit" style="width:35px; text-align:center;" title="Reflexe & Sinne-Wert" value="{{actor.data.Channeling.Spirit}}"></td>
+				<td nowrap align="center"><input type="number" name="data.Channeling.Spirit" style="width:35px; text-align:center;" title="Kanalisierung der askesischen Kräfte" value="{{actor.data.Channeling.Spirit}}"></td>
 				</tr>
 			<tr style="width: 120px;">
 				<td colspan="12" style="height: 15px; font-size: 13px; text-align:center; color: rgb(255, 50, 0);" border="1">Kosmische Energie</td>
@@ -31,13 +31,13 @@
 			<tr style="width: 150px;">
 				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Kosmische Macht:</label></td>
 				<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Kosmische Macht">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
-				<td nowrap align="center"><input type="number" name="data.ChannelResources.ManaCom" style="width:35px; text-align:center;" title="Körperkraft-Wert" value="{{actor.data.ChannelResources.ManaCom}}" disabled="true"></td>
+				<td nowrap align="center"><input type="number" name="data.ChannelResources.ManaCom" style="width:35px; text-align:center;" title="Gesamtmenge der kosmischen Kraft" value="{{actor.data.ChannelResources.ManaCom}}" disabled></td>
 				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Aktuelle Macht:</label></td>
 				<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Aktuelle Macht">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
-				<td nowrap align="center"><input type="number" name="data.ChannelResources.Mana" style="width:35px; text-align:center;" title="Geschicklichkeit-Wert" value="{{actor.data.ChannelResources.Mana}}" disabled="true"></td>
+				<td nowrap align="center"><input type="number" name="data.ChannelResources.Mana" style="width:35px; text-align:center;" title="Aktuelle Menge der kosmischen Kraft" value="{{actor.data.ChannelResources.Mana}}" disabled></td>
 				<td nowrap align="center" style="border-right: 1px;"><label class="sheet-table-header" style="width: 120px; text-align:center; color: rgb(0, 0, 0);">Kosmische Regeneration:</label></td>
 				<td nowrap align="center" style="border-left: 1px;"><span style="width: 50px;" title="Kosmische Regeneration">&nbsp;<img src="../../systems/toeloria/icons/info.svg" style="height: 15px; width: 15px; border: none;"></img></span>&nbsp;&nbsp;</td>
-				<td nowrap align="center"><input type="number" name="data.ChannelResources.ManaReg" style="width:35px; text-align:center;" title="Reflexe & Sinne-Wert" value="{{actor.data.ChannelResources.ManaReg}}" disabled="true"></td>
+				<td nowrap align="center"><input type="number" name="data.ChannelResources.ManaReg" style="width:35px; text-align:center;" title="Regenerationsmenge der kosmischen Kraft" value="{{actor.data.ChannelResources.ManaReg}}" disabled></td>
 			</tr>
 		</tbody>
 	</table>
@@ -71,6 +71,7 @@
 									type="text"
 									class=""
 									style="width: 60px"
+									title="Gaben Typus"
 									value="{{skill.data.SkillTypus.value}}"
 									disabled="true"
 								/>&nbsp;
@@ -80,6 +81,7 @@
 									type="number"
 									class=""
 									style="width: 45px"
+									title="Standardschwierigkeit"
 									value="{{skill.data.SkillDifficult.value}}"
 									disabled="true"
 								/>&nbsp;
@@ -94,7 +96,7 @@
 									data-property="data.SkillValue.value"
 									data-field="data.SkillValue.value"
 									style="height: 24px; width: 50px; font-size: 0.75em"
-									title="Ability used for feet"
+									title="Fähigkeitswert der Gabe"
 									placeholder="0"
 								>
 									<option id="data.SkillValue.value" value="{{skill.dataSkillValue.value}}" hidden="hidden" selected="selected">{{skill.data.SkillValue.value}}</option>
@@ -117,7 +119,7 @@
 									data-property="data.SkillUsage.value"
 									data-field="data.SkillUsage.value"
 									style="height: 24px; width: 50px; font-size: 0.75em"
-									title="Ability used for feet"
+									title="Stufen der Gabe die angewendet wird"
 								>
 									<option id="data.SkillUsage.value" value="{{skill.data.SkillUsage.value}}" hidden="hidden" selected="selected">{{skill.data.SkillUsage.value}}</option>
 									<option type="number" style="width: 45px" value="1">1</option>
@@ -129,7 +131,7 @@
 								</select>&nbsp;
 							</td>
 							
-							<td nowrap align="center" class="rollable" data-roll-type="item">&nbsp;<button type="button" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;"></button>&nbsp;</td>
+							<td nowrap align="center" class="rollable" data-roll-type="item">&nbsp;<button type="button" style="background-image:url(../../systems/toeloria/icons/d12_kl.png); height: 27px; width: 27px;" title="Würfel Makro"></button>&nbsp;</td>
 							<td nowrap align="center" ><span class="item-delete delete">&nbsp;<i class="fas fa-trash"></i>&nbsp;</span></td>
 						</tr>
 					</tbody>
