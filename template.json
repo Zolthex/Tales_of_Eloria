@@ -153,7 +153,12 @@
 				"Armor": {
 					"name": "Rüstungswert",
 					"value": 0
+				},
+				"AngRoll": {
+					"name": "Angriffswurf",
+					"value": 0
 				}
+
 			},
 			"features": {
 				"Melee": {
@@ -486,11 +491,15 @@
 		}
 	},
 	"Item": {
-		"types": ["Waffen", "Armor", "Fertigkeiten", "Skills", "Items", "Companions"],
+		"types": ["Waffen", "Guns", "Armor", "Fertigkeiten", "Skills", "Items", "Companions"],
 		"templates": {
 			"mainstats": {
 				"Typus": {
 					"name": "Gegenstandsart",
+					"value": ""
+				},
+				"TypeName": {
+					"name": "Gegenstandsname",
 					"value": ""
 				},
 				"EnchantValue": {
@@ -605,6 +614,9 @@
 			}
 		},
 		"Waffen": {
+			"templates": ["mainstats", "firearms", "iteminfo", "formula"]
+		},
+		"Guns": {
 			"templates": ["mainstats", "firearms", "iteminfo", "formula"]
 		},
 		"Armor": {

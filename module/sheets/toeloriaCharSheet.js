@@ -1,7 +1,7 @@
 import {attributeRoll} from '../helpers/dice.js'
 
 export default class toeloriaCharSheet extends ActorSheet {
-	static get defaultOptions() {
+	static get defaultOptions() {		
 		return mergeObject(super.defaultOptions, {
 			template: "systems/toeloria/templates/sheets/CharSheet.hbs",
 			classes: ["toeloria", "sheet", "CharSheet"],
@@ -41,6 +41,7 @@ export default class toeloriaCharSheet extends ActorSheet {
 		const features = actorData.items.filter((s) => s.type === "Fertigkeiten")
 		const itemsthings = actorData.items.filter((s) => s.type === "Items_2")
 		const weapons = actorData.items.filter((s) => s.type === "Waffen")
+		const guns = actorData.items.filter((s) => s.type === "Guns")
 		const armors = actorData.items.filter((s) => s.type === "Armor")
 		const companions = actorData.items.filter((s) => s.type === "Companions")
 		const stacks = actorData.items.filter((s) => s.type === "Items")
@@ -59,6 +60,7 @@ export default class toeloriaCharSheet extends ActorSheet {
 			features,
 			itemsthings,
 			weapons,
+			guns,
 			armors,
 			companions,
 			stacks,
@@ -82,14 +84,20 @@ export default class toeloriaCharSheet extends ActorSheet {
 		event.preventDefault();
 		const element = event.currentTarget;
 		const dataset = element.dataset;
-		console.log("Testphase");
+
+		console.log("Testphase", dataset);
+		let def = "";
+		if (dataset.rollDef) {
+			def = dataset.rollDef;
+			console.log("Verteidigungsart: ", def);
+		}
 	
 		// Handle rolls.
 		if (dataset.rollType) {
 			if (dataset.rollType === 'item') {
 				const itemId = element.closest('.item').dataset.itemId;
 				const item = this.actor.items.get(itemId);
-				if (item) return item.roll();
+				if (item) return item.roll(def);
 			//} else if (dataset.rollType === "attribute") {
 			//	return attributeRoll( dataset.attribute, this.actor );  
 			// TempDamage
