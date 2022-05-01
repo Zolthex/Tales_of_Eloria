@@ -177,11 +177,11 @@ export default class toeloriaItem extends Item {
 					}
 				}
 				else {
-					label = `Weicht aus, kein Schaden. Ausweichwert: ${calc} (${calc_date} + ${cat_par})`;
+					label = `Versucht auszuweichen. Ausweichwert: ${calc} (${calc_date} + ${cat_par})`;
 				}
 				//label = `Verteidigt sich mit ` + item.name + `(+${ench}) [${typ}] <br>Schutz: ${compl} (${def} + ${enc_res}) / Abwehrwert: ${calc} (${calc_date} + ${cat_par})`;
 				console.log("Rüstungs-Label: ", label);
-				await this.defenseCalculation(calc, compl);
+				//await this.defenseCalculation(calc, compl);
 			}
 			else {
 				console.log("Gabe");
