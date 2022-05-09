@@ -75,7 +75,7 @@
 		  }		
 	  ],
 	"languages": [],
-	"initiative": "1d6 + @Ini_Bonus",
+	"initiative": "@Ini_Bonus",
 	"gridDistance": 1,
 	"gridUnits": "m"
 }

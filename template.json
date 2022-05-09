@@ -129,6 +129,10 @@
 					"name": "Heilungsmenge",
 					"value": 0
 				},
+				"HealPlace": {
+					"name": "Heilungsort",
+					"value": 0
+				},
 
 				"Dodge": {
 					"name": "Ausweichen",

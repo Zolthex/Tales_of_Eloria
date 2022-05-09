@@ -23,6 +23,23 @@
 		</tbody>
 	</table>
 -->
+<div>
+	<button type="button" data-toe-healroll="1d6" style="background-image:url(../../systems/toeloria/icons/trefoil_klein.png); height: 27px; width: 27px;"></button>
+	<select name="data.toeHealplace.value" id="data.toeHealplace.value" style="width: 200px" placeholder="{{data.toeHealplace.value}}">
+		{{#select data.toeHealplace.value}}
+			<option id="data.Typus.value" value="{{data.Typus.value}}" hidden="hidden" selected="selected">{{data.toeHealplace.value}}</option>
+			<option type="text" style="width: 45px" value="-1">Boden ungepolstert</option>
+			<option type="text" style="width: 45px" value="0">Boden gepolstert</option>
+			<option type="text" style="width: 45px" value="1">Zimmer ohne Bett</option>
+			<option type="text" style="width: 45px" value="2">Zimmer mit Bett</option>
+			<option type="text" style="width: 45px" value="3">Zimmer mit Einzelbett</option>
+			<option type="text" style="width: 45px" value="4">Suite</option>
+			<option type="text" style="width: 45px" value="5">Edel-Suite</option>
+		{{/select}}
+	</select>
+</div>
+
+<br>
 
 <label style="width: 150px; color: rgb(0, 0, 0); text-align: center;">Nahkampf</label>
 <div class="section-body">

@@ -16,3 +16,11 @@
 .textcolor {
 	color: rgb(126, 38, 38);
 }
+
+.item.flexrow {
+    width: fit-content;
+}
+
+.item.attribute.flexrow {
+    width: fit-content;
+}

@@ -14,6 +14,7 @@ export default class toeloriaCharSheet extends ActorSheet {
 		if (this.isEditable) {
 			html.find("[data-toe-roll], [data-toe-attribute]").on("click", this._rollAttributeCheck.bind(this));
 			html.find("[data-toe-abroll], [data-toe-ability], [data-toe-abilattr]").on("click", this._rollAbilityCheck.bind(this));
+			html.find("[data-toe-healroll]").on("click", this._rollHealCheck.bind(this));
 			html.find("[data-toe-fabroll], [data-toe-fability], [data-toe-fabilattr], [data-toe-fvalue]").on("click", this._rollFeatCheck.bind(this));
 			html.find(".rollable").on("click", this._onRoll.bind(this));
 			html.find(".item-delete").on("click", (event) => this.onClickDeleteItem(event));
@@ -101,6 +102,60 @@ export default class toeloriaCharSheet extends ActorSheet {
 			//} else if (dataset.rollType === "attribute") {
 			//	return attributeRoll( dataset.attribute, this.actor );  
 			// TempDamage
+			}
+		}
+	}
+
+	async _rollHealCheck(event) {
+		event.preventDefault();
+		const { toeHealroll } = event.currentTarget.dataset;
+		const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+		const rollMode = game.settings.get("core", "rollMode");
+		let actor = this.actor;
+		let flavor = "";
+		console.log(this.actor.data);
+
+		const dmg = actor.data.data.Damage?.value ?? 0;
+		const dmgreg = actor.data.data.HealBase?.value ?? 0;
+		const place = actor.data.data.toeHealplace?.value ?? 0;
+		const mana = actor.data.data.ChannelResources?.Mana ?? 0;
+		const manareg = actor.data.data.ChannelResources?.ManaReg ?? 0;
+		const manacom = actor.data.data.ChannelResources?.ManaCom ?? 0;
+		
+		const roll = new Roll(toeHealroll);
+		//await roll.evaluate({ async: true });
+		await roll.roll({ async: true });
+		let calc_date = roll._total;
+
+		let heal = Number(calc_date) + Number(dmgreg) + Number(place);
+		let reg = Number(calc_date) + Number(manareg) + Number(place);
+		let temp_heal = Number(dmg) - Number(heal);
+		let temp_mana = Number(mana) + Number(reg);
+
+		console.log("[...] = ", dmg, mana, calc_date, dmgreg, manareg, place);
+		flavor = ` [Heilung] ${heal} [Regeneration] ${reg}`;
+
+		roll.toMessage({ 
+			speaker: speaker,
+			rollMode: rollMode,
+			flavor 
+		});
+
+		if (dmg <= heal)
+		{
+			if (temp_mana <= manacom) {
+				return actor.update({'data.Damage.value': 0, 'data.ChannelResources.Mana': temp_mana});
+			}
+			else {
+				return actor.update({'data.Damage.value': 0, 'data.ChannelResources.Mana': manacom});
+			}
+		}
+		else {
+			if (temp_mana <= manacom) {
+				return actor.update({'data.Damage.value': temp_heal, 'data.ChannelResources.Mana': temp_mana});
+			}
+			else {
+				return actor.update({'data.Damage.value': temp_heal, 'data.ChannelResources.Mana': manacom});
 			}
 		}
 	}
