@@ -24,7 +24,14 @@
 	</table>
 -->
 <div>
-	<button type="button" data-toe-healroll="1d6" style="background-image:url(../../systems/toeloria/icons/trefoil_klein.png); height: 27px; width: 27px;"></button>
+	Initiativewurf: &nbsp;<button type="button" class="Restore_Resources" data-toe-iniroll="1d6"></button> &nbsp;
+	<input type="number" name="data.Ini_Bonus.value" style="width:35px; text-align:center;" title="Ini-Bonus Wert" value="{{actor.data.Ini_Bonus.value}}" disabled="true">
+
+	&nbsp;&nbsp;&nbsp;&nbsp; Erlittener Schaden: &nbsp;<button type="button" class="Restore_Resources" data-toe-dmgchange="GetDamage"></button> &nbsp;
+	<input type="number" name="data.GetDamage.value" style="width:35px; text-align:center;" title="Schadens-Wert" value="{{actor.data.GetDamage.value}}">
+
+	&nbsp;&nbsp;&nbsp;&nbsp; Erholungsumgebung: &nbsp;<button type="button" class="Restore_Resources" data-toe-healroll="1d6"></button> &nbsp;
+
 	<select name="data.toeHealplace.value" id="data.toeHealplace.value" style="width: 200px" placeholder="{{data.toeHealplace.value}}">
 		{{#select data.toeHealplace.value}}
 			<option id="data.Typus.value" value="{{data.Typus.value}}" hidden="hidden" selected="selected">{{data.toeHealplace.value}}</option>
@@ -37,11 +44,12 @@
 			<option type="text" style="width: 45px" value="5">Edel-Suite</option>
 		{{/select}}
 	</select>
+
 </div>
 
 <br>
 
-<label style="width: 150px; color: rgb(0, 0, 0); text-align: center;">Nahkampf</label>
+<label style="width: 150px; color: rgb(0, 0, 0); text-align: left;">Nahkampf</label>
 <div class="section-body">
 	<ol class="weapon-list item-list">
 		{{#each weapons as |weapon weaponsId|}}

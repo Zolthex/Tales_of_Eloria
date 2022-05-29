@@ -1,7 +1,8 @@
 <form class="Character-Sheet {{cssClass}}" autocomplete="off">
 
     {{!-- Character Header Stats - Start --}}
-    <div class="header personal">
+    <!--
+    <div class="header personal flexrow">
         <h1>
             <span class="label h1Left" align="left" style="text-align: left;">Charakterdaten</span>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -13,8 +14,16 @@
             <span class="label h1-right" align="right" style="text-align: right;">Stufe {{actor.data.CharLevel.value}}</span>
         </h1>
     </div>
+    -->    
+    <div class="header personal flexrow row">
+        <h1>
+            <div class="column" style="float:left; width: 50%; text-align: left;">Charakter</div>
+            <div class="column" style="float:left; width: 50%; text-align: right;">Stufe {{actor.data.CharLevel.value}}</div>
+        </h1>
+    </div>
+
     {{!-- Character Header Stats - End --}}
-    
+
     <br/>
     
     {{!-- Character Basic Stats - Start --}}

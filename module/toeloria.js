@@ -7,6 +7,9 @@ Hooks.once("init", async function () {
 
 	CONFIG.Item.documentClass = toeloriaItem;
 
+	CONFIG.Combat.initiative.formular = "1d6 + @Ini_Bonus";
+	//Combat.prototype._getInitiativeFormular = _getInitiativeFormular;
+
 	Items.unregisterSheet("core", ItemSheet);
 	Items.registerSheet("toeloria", toeloriaItemSheet, { makeDefault: true });
 

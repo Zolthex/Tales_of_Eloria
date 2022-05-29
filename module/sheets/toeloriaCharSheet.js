@@ -3,6 +3,11 @@ import {attributeRoll} from '../helpers/dice.js'
 export default class toeloriaCharSheet extends ActorSheet {
 	static get defaultOptions() {		
 		return mergeObject(super.defaultOptions, {
+			width: 847,
+			height: 660,
+			//scale: "vertical",
+			//resizable: [false, vertical],
+			//resizable: false,  // auskommentieren damit das Actorsheet wieder resized werden kann.
 			template: "systems/toeloria/templates/sheets/CharSheet.hbs",
 			classes: ["toeloria", "sheet", "CharSheet"],
 			tabs: [{ navSelector: ".tabs", contentSelector: ".sheet-body", initial: "stats" }],
@@ -15,6 +20,8 @@ export default class toeloriaCharSheet extends ActorSheet {
 			html.find("[data-toe-roll], [data-toe-attribute]").on("click", this._rollAttributeCheck.bind(this));
 			html.find("[data-toe-abroll], [data-toe-ability], [data-toe-abilattr]").on("click", this._rollAbilityCheck.bind(this));
 			html.find("[data-toe-healroll]").on("click", this._rollHealCheck.bind(this));
+			html.find("[data-toe-iniroll]").on("click", this._rollIniCheck.bind(this));
+			html.find("[data-toe-dmgchange").on("click", this._setDagamge.bind(this));
 			html.find("[data-toe-fabroll], [data-toe-fability], [data-toe-fabilattr], [data-toe-fvalue]").on("click", this._rollFeatCheck.bind(this));
 			html.find(".rollable").on("click", this._onRoll.bind(this));
 			html.find(".item-delete").on("click", (event) => this.onClickDeleteItem(event));
@@ -26,6 +33,8 @@ export default class toeloriaCharSheet extends ActorSheet {
 
 	async getData() {
 		const character = this.actor;
+		console.log("Test Character", character);
+		console.log("Test This", this);
 		// find all owners, which are the list of all potential masters
 		const owners = Object.entries(character.data.permission)
 			.filter(([_id, permission]) => permission === CONST.ENTITY_PERMISSIONS.OWNER)
@@ -160,6 +169,34 @@ export default class toeloriaCharSheet extends ActorSheet {
 		}
 	}
 
+	async _rollIniCheck(event) {
+		event.preventDefault();
+		const { toeIniroll } = event.currentTarget.dataset;
+		const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+		const rollMode = game.settings.get("core", "rollMode");
+		let actor = this.actor;
+		let flavor = "";
+		console.log(this.actor.data);
+
+		const ini_bo = actor.data.data.Ini_Bonus?.value ?? 0;
+
+		const roll = new Roll(toeIniroll);
+		//await roll.evaluate({ async: true });
+		await roll.roll({ async: true });
+		let calc_date = roll._total;
+
+		let ini_roll = Number(calc_date) + Number(ini_bo);
+
+		//console.log("[...] = ", dmg, mana, calc_date, dmgreg, manareg, place);
+		flavor = ` [Initiative] -> ${ini_roll}`;
+
+		roll.toMessage({ 
+			speaker: speaker,
+			rollMode: rollMode,
+			flavor 
+		});
+	}
+
 	async _rollAttributeCheck(event) {
 		event.preventDefault();
 		const { toeRoll, toeAttribute } = event.currentTarget.dataset;
@@ -279,6 +316,25 @@ export default class toeloriaCharSheet extends ActorSheet {
 		}
 	}
 
+	async _setDagamge(event) {
+		event.preventDefault();
+		const { toeDmgchange  } = event.currentTarget.dataset;
+		let element = event.currentTarget;
+		let field = element.dataset.field;
+
+		let actor = this.actor;
+		let temp_dmg = actor.data.data[toeDmgchange].value;
+		let true_dmg = actor.data.data.Damage?.value ?? 0;
+		let damage = Number(temp_dmg) + Number(true_dmg);
+		let zero = Number(0);
+
+		console.log("Damage before: ", true_dmg);
+		console.log("Field: ", field);
+		console.log("element.value: ", element.value);
+		console.log("Add Damage: ", damage);
+
+		return actor.update({'data.Damage.value': damage, 'data.GetDamage.value': zero});
+	}
 
 	async _onAttrEdit(event) {
 		event.preventDefault();		

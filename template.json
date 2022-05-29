@@ -113,6 +113,10 @@
 					"name": "Temporäre Schadenspunkte",
 					"value": 0
 				},
+				"GetDamage": {
+					"name": "Erhaltene Schadenspunkte",
+					"value": 0
+				},
 				"Penalty": {
 					"name": "Schadens-Malus",
 					"value": 0
