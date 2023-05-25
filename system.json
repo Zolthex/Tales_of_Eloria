@@ -5,7 +5,7 @@
 	"author": "Zolthex",
 	"version": "0.2021.09",
 	"minimumCoreVersion": "0.8.9",
-	"compatibleCoreVersion": "0.8.9",
+	"compatibleCoreVersion": "11.299",
 	"esmodules": ["module/toeloria.js"],
 	"styles": ["css/toeloria.css"],
 	"scripts": [],
