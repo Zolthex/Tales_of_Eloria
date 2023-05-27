@@ -1,11 +1,22 @@
 {
-	"name": "toeloria",
+	"id": "toeloria",
 	"title": "Tales of Eloria",
 	"description": "A Fantasy/Pre-Steampunk System written by Zolthex",
-	"author": "Zolthex",
 	"version": "0.2021.09",
-	"minimumCoreVersion": "0.8.9",
-	"compatibleCoreVersion": "11.299",
+	"compatibility": {
+		"minimum": "0.8.9",
+		"verified": "11",
+		"maximum": "11"
+	  },
+	  "authors": [
+		{
+		  "name": "Zolthex",
+		  "url": "https://github.com/Zolthex/",
+		  "email": "Dirk.Motylski@web.de",
+		  "discord": "Kira#1062"
+		}
+	  ],  
+	"manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
 	"esmodules": ["module/toeloria.js"],
 	"styles": ["css/toeloria.css"],
 	"scripts": [],
