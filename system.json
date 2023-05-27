@@ -16,7 +16,7 @@
 		  "discord": "Kira#1062"
 		}
 	  ],  
-	"manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+	"manifest": "https://github.com/Zolthex/Tales_of_Eloria/edit/main/system.json",
 	"esmodules": ["module/toeloria.js"],
 	"styles": ["css/toeloria.css"],
 	"scripts": [],
