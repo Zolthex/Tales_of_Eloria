@@ -3,6 +3,7 @@
 	"title": "Tales of Eloria",
 	"description": "A Fantasy/Pre-Steampunk System form Zolthex",
 	"version": "0.2024.12",
+	"download": "https://github.com/Zolthex/Tales_of_Eloria/archive/refs/heads/main.zip"
 	"author": "Zolthex",
 	"scripts": [],
 	"esmodules": ["module/toeloria.js"],
