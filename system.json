@@ -1,25 +1,12 @@
 {
 	"id": "toeloria",
 	"title": "Tales of Eloria",
-	"description": "A Fantasy/Pre-Steampunk System written by Zolthex",
+	"description": "A Fantasy/Pre-Steampunk System form Zolthex",
 	"version": "0.2024.12",
-	"compatibility": {
-		"minimum": "0.8.9",
-		"verified": "14",
-		"maximum": "14"
-	  },
-	  "authors": [
-		{
-		  "name": "Zolthex",
-		  "url": "https://github.com/Zolthex/",
-		  "email": "Dirk.Berg.Bie@web.de",
-		  "discord": "kira_sayo"
-		}
-	  ],  
-	"manifest": "",
+	"author": "Zolthex",
+	"scripts": [],
 	"esmodules": ["module/toeloria.js"],
 	"styles": ["css/toeloria.css"],
-	"scripts": [],
 	"packs": [
 		{
 		  "label": "Item",
@@ -83,10 +70,58 @@
 			"system": "toeloria",
 			"package": "toeloria",
 			"private": false
+		},
+		{
+			"label": "Vertraute",
+			"entity": "Item",
+			"name": "vertraute",
+			"path": "packs/vertraute.db",
+			"system": "toeloria",
+			"package": "toeloria",
+			"private": false
+		  },
+		  {
+			"label": "Vertraute (Shapes)",
+			"entity": "Item",
+			"name": "vertraute-shapes",
+			"path": "packs/vertraute-shapes.db",
+			"system": "toeloria",
+			"package": "toeloria",
+			"private": false
+		  },
+		  {
+			"label": "Tavernen Musik",
+			"entity": "Playlist",
+			"name": "tavernen-musik",
+			"path": "packs/tavernen-musik.db",
+			"system": "toeloria",
+			"package": "toeloria",
+			"private": false
 		  }		
 	  ],
 	"languages": [],
-	"initiative": "1d6 + @Ini_Bonus",
-	"gridDistance": 1,
-	"gridUnits": "m"
+	"background": "",
+	"initiative": "1d6 + @Initiative",
+	"grid": {
+        "diagonals": 2,
+        "distance": 1,
+        "units": "Meter"
+    },
+	"url": "https://github.com/Zolthex/Tales_of_Eloria",
+	"manifest": "https://raw.githubusercontent.com/Zolthex/Tales_of_Eloria/refs/heads/main/system.json",
+	"flags": {
+        "hotReload": {
+            "extensions": [
+                "css",
+                "html",
+                "hbs",
+                "json"
+            ],
+            "paths": [
+                "templates",
+                "styles/css",
+                "lang"
+            ]
+        }
+    }
 }
