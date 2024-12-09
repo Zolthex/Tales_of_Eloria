@@ -110,18 +110,18 @@
 	"url": "https://github.com/Zolthex/Tales_of_Eloria",
 	"manifest": "https://github.com/Zolthex/Tales_of_Eloria/archive/refs/heads/main/system.json",
 	"flags": {
-        "hotReload": {
-            "extensions": [
-                "css",
-                "html",
-                "hbs",
-                "json"
-            ],
-            "paths": [
-                "templates",
-                "styles/css",
-                "lang"
-            ]
-        }
-    }
+        	"hotReload": {
+            		"extensions": [
+                		"css",
+                		"html",
+                		"hbs",
+                		"json"
+            		],
+            		"paths": [
+                		"templates",
+                		"styles/css",
+                		"lang"
+            		]
+        	}
+    	}
 }
