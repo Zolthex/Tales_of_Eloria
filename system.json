@@ -108,7 +108,7 @@
         "units": "Meter"
     },
 	"url": "https://github.com/Zolthex/Tales_of_Eloria",
-	"manifest": "https://raw.githubusercontent.com/Zolthex/Tales_of_Eloria/refs/heads/main/system.json",
+	"manifest": "https://github.com/Zolthex/Tales_of_Eloria/archive/refs/heads/main/system.json",
 	"flags": {
         "hotReload": {
             "extensions": [
