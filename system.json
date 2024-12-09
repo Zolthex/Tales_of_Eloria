@@ -98,15 +98,15 @@
 			"package": "toeloria",
 			"private": false
 		  }		
-	  ],
+	],
 	"languages": [],
 	"background": "",
 	"initiative": "1d6 + @Initiative",
 	"grid": {
-        "diagonals": 2,
-        "distance": 1,
-        "units": "Meter"
-    },
+	        "diagonals": 2,
+	        "distance": 1,
+	        "units": "Meter"
+    	},
 	"url": "https://github.com/Zolthex/Tales_of_Eloria",
 	"manifest": "https://github.com/Zolthex/Tales_of_Eloria/archive/refs/heads/main/system.json",
 	"flags": {
